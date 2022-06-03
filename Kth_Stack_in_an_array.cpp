@@ -4,7 +4,7 @@ vector<vector<int>>vec;
 void pushfunc(string push)
 {
     string num=push.substr(5,6);
-    int numbr=stoi(num);
+    int numbr=num-"0";
     vector<int>a=vec[numbr];
     cout<<"Enter the number to pushback in the kth vector"<<"\n";
     int n;
@@ -23,10 +23,15 @@ int main()
         while(k-->0)
         {
             string push,pop;
+            cout<<"Enter 1 for push 2 for pop"<<endl;
+            int no;
+            cin>>no;
+            if(no==1)
             cin>>push;
+            else
             cin>>pop;
-            cout<<push.substr(0,5)<<endl;
-            if(push.substr(0,5)=="push")
+            cout<<push.substr(0,4)<<endl;
+            if(push.substr(0,4)=="push")
             {
                 pushfunc(push);
             }
